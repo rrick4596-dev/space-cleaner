@@ -5,9 +5,12 @@
 # Check disk usage and identify large directories
 Write-Host "Starting disk space analysis..." -ForegroundColor Cyan
 $cDrive = Get-PSDrive C
-$diskUsage = [math]::Round(($cDrive.Used / $cDrive.TotalSize) * 100, 1)
-Write-Host ("C: drive is {0} GB used ({1}%)" -f $cDrive.Used, $diskUsage) -ForegroundColor Yellow
-Write-Host ("Available space: {0} GB" -f $cDrive.Free) -ForegroundColor Green
+$usedGB = [math]::Round($cDrive.Used / 1GB, 2)
+$freeGB = [math]::Round($cDrive.Free / 1GB, 2)
+$totalGB = [math]::Round($cDrive.TotalSize / 1GB, 2)
+$diskUsage = if ($totalGB -gt 0) { [math]::Round(($usedGB / $totalGB) * 100, 1) } else { 0 }
+Write-Host ("C: drive is {0} GB used ({1}%)" -f $usedGB, $diskUsage) -ForegroundColor Yellow
+Write-Host ("Available space: {0} GB" -f $freeGB) -ForegroundColor Green
 Write-Host "----------------------------------------" -ForegroundColor Yellow
 
 # Find large directories (top 15)
