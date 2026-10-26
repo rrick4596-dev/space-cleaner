@@ -1,29 +1,14 @@
-# 🧹 Claude Code Space Cleaner
+# 🧹 Space Cleaner — Interactive Disk Analysis Tool
 
-**A TreeSize-like interactive disk analysis tool for Windows.**
-
-> Is your C: drive nearly full? This tool scans your system, shows directories in a color-coded tree view, flags folders that are safe to delete, and suggests safe cleanup commands — all without risking critical system files.
+**A TreeSize-like PowerShell tool for Windows that helps you find and safely delete large folders to free up disk space.**
 
 ---
 
-## 📋 Features
-
-- **TreeView visualization** — indented directory tree with size bars (like TreeSize)
-- **Color-coded safety** — Green (safe), Yellow (caution), Red (critical)
-- **Interactive drill-down** — type a folder number to explore subfolders
-- **Built-in instructions** — help screen on startup, accessible anytime with `h`
-- **Safe cleanup commands** — uv, npm, DISM, and more
-- **Read-only** — scans only, never deletes automatically
+> Is your C: drive nearly full? **Space Cleaner** scans your system, visualizes directory sizes in a color-coded tree view, flags folders that are safe to delete, and suggests safe cleanup commands — all without risking critical system files.
 
 ---
 
 ## 🚀 Quick Start
-
-### Prerequisites
-- Windows 10 or Windows 11
-- PowerShell 5.1+ (built-in)
-
-### Run the Tool
 
 ```powershell
 # 1. Open PowerShell as Administrator
@@ -39,7 +24,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ---
 
-## 🎮 Interactive Controls
+## 🎮 How to Use
 
 | Key | Action |
 |-----|--------|
